@@ -1,0 +1,7 @@
+specVersion: '2.3'
+metadata:
+  name: sap_walkthrough
+type: application
+framework:
+  name: SAPUI5
+  version: "1.86.3"
