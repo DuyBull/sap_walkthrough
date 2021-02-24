@@ -28,20 +28,6 @@ sap.ui.define([
             //     fallbackLocale: ""
             // });
             // this.getView().setModel(i18nModel, "i18n");
-        },
-
-        onShowHello: function () {
-            // Show a native or vanilla JS alert
-            // alert("Hello There!");
-
-            // read msg from i18n Model
-            var oBundle = this.getView().getModel("i18n").getResourceBundle();
-            var sRecipient = this.getView().getModel().getProperty("/recipient/name");
-            var sMsg = oBundle.getText("helloMsg", [sRecipient]);
-
-            // show msg
-            MessageToast.show(sMsg);
-            // MessageToast.show("Hello There!")
         }
     })
 });
