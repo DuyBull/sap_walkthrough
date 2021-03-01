@@ -9,7 +9,7 @@ sap.ui.define([
     ResourceModel) {
     'use strict';
 
-    return Controller.extend("sap.ui.sap_walkthrough.App", {
+    return Controller.extend("sap.ui.sap_walkthrough.controller.App", {
         onInit: function () {
             // // Set the data model on the view
             // var Odata = {
@@ -28,6 +28,9 @@ sap.ui.define([
             //     fallbackLocale: ""
             // });
             // this.getView().setModel(i18nModel, "i18n");
+        },
+        onOpenDialog: function() {
+            this.getOwnerComponent().openHelloDialog();
         }
     })
 });
