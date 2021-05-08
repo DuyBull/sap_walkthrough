@@ -6,19 +6,8 @@
 >
 	<!-- <Text text="Hello UI5 again!" /> -->
 	<Shell>
-		<App class="inlineMyAppDemo">
-			<pages>
-				<Page title="{i18n>homePageTitle}">
-					<headerContent>
-						<Button 
-							icon="sap-icon://hello-world"
-							press=".onOpenDialog" />
-					</headerContent>
-					<content>
-						<mvc:XMLView viewName="sap.ui.sap_walkthrough.view.HelloPanel" />
-					</content>
-				</Page>
-			</pages>
+		<App class="inlineMyAppDemo" id="app">
+
 		</App>
 	</Shell>
 </mvc:View>

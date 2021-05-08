@@ -11,6 +11,13 @@
                 "version": "1.0.0"
             },
             "dataSources": {
+                "invoiceRemote":{
+                        "uri": "https://services.odata.org/V2/Northwind/Northwind.svc",
+                        "type": "OData",
+                        "settings": {
+                                "odataVersion": "2.0"
+                        }
+                }
             },
             "resources": "resources.json",
             "offline": false
@@ -70,6 +77,35 @@
                             }
                     }
             },
+            "routing": {
+                    "config":{
+                        "routerClass": "sap.m.routing.Router",
+                        "viewType": "XML",
+                        "viewPath": "sap.ui.sap_walkthrough.view",
+                        "controlId": "app",
+                        "controlAggregation": "pages",
+                        "async": true
+                    },
+                    "routes":[{  
+                        "pattern": "",
+                        "name": "overview",
+                        "target": "overview"
+                    },{
+                        "pattern": "detail/{invoicePath}",
+                        "name": "detail",
+                        "target": "detail"
+                    }],
+                    "targets": {
+                        "overview":{
+                                "viewId": "overview",
+                                "viewName": "Overview"
+                        },
+                        "detail":{
+                                "viewId": "detail",
+                                "viewName": "Detail"
+                        }
+                    }
+            },
             "extends": {
                     "component": "sap.apf.base"
             },
@@ -86,6 +122,9 @@
                                     "fallbackLocale": ""
                             },
                             "uri": "i18n/i18n.properties"
+                    },
+                    "invoice": {
+                            "dataSource": "invoiceRemote"
                     }
             },
             "config": {

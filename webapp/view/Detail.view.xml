@@ -1,0 +1,20 @@
+<mvc:View
+	controllerName="sap.ui.sap_walkthrough.controller.Detail"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="5"
+	xmlns:wt="sap.ui.sap_walkthrough.controller"
+>
+	<Page 
+		title="{i18n>detailPageTitle}"
+		showNavButton="true"
+		navButtonPress=".onNavBack">
+		<ObjectHeader 
+			intro="{invoice>ShipperName}"
+			title="{invoice>ProductName}" />	
+		<wt:ProductRating id="rating" class="sapUiSmallMarginBeginEnd" change=".onRatingChange" />
+	</Page>
+</mvc:View>
